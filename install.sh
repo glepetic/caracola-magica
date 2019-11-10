@@ -1,8 +1,8 @@
-directory="$HOME/Caracola Magica"
+directory="$HOME/Caracola_Magica"
 script="caracola_magica.py"
 aliases_file="$HOME/.bash_aliases"
 
-echo "Reconfiguring script"
+echo "Reconfiguring script folders"
 
 # Clean old files
 rm -rf "$directory"
@@ -18,7 +18,7 @@ else
   touch "$aliases_file"
 fi
 
-caracola_alias="alias caracola='python $script'"
+caracola_alias="alias caracola='python $directory/$script'"
 
 # Check for caracola alias in
 alias_already_added=$(cat "$aliases_file" | grep "$caracola_alias")
