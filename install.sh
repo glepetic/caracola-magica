@@ -1,5 +1,7 @@
 directory="$HOME/Caracola_Magica"
-script="caracola_magica.py"
+src_dir="src"
+resources_dir="resources"
+script="$src_dir/caracola_magica.py"
 aliases_file="$HOME/.bash_aliases"
 
 echo "Reconfiguring script folders"
@@ -9,7 +11,8 @@ rm -rf "$directory"
 
 # Create directory for caracola script
 mkdir "$directory"
-cp $script "$directory"
+cp -r $src_dir "$directory"
+cp -r $resources_dir "$directory"
 
 # Check existence of alias file, create it if needed
 if test -f "$aliases_file"; then
@@ -18,7 +21,7 @@ else
   touch "$aliases_file"
 fi
 
-caracola_alias="alias caracola='python $directory/$script'"
+caracola_alias="alias caracola='python3 $directory/$script'"
 
 # Check for caracola alias in
 alias_already_added=$(cat "$aliases_file" | grep "$caracola_alias")
