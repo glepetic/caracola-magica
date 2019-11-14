@@ -27,7 +27,9 @@ def overwrite_print(string):
 
 
 def loader():
-    for x in range(0, 5):
-        b = "Pensando" + "." * x
-        overwrite_print(b)
+    loader_msg = "Pensando"
+    for _ in range(0, 5):
+        loader_msg += "."
+        overwrite_print(loader_msg)
         sleep(1)
+    overwrite_print(len(loader_msg) * " ")
