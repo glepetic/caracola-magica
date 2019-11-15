@@ -28,7 +28,10 @@ alias_already_added=$(cat "$aliases_file" | grep "$caracola_alias")
 
 if [ -z "$alias_already_added" ]
 then
+      # Add alias to alias file
       echo "$caracola_alias" >> "$aliases_file"
+      # Reload aliases
+      exec bash
 else
       echo "Caracola alias was already previously configured."
 fi
