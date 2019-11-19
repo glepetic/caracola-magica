@@ -14,6 +14,10 @@ def get_file_content(file_path):
         return f.read()
 
 
+def choose_replies_file():
+    return choose_random_value(["positive", "neutral", "negative"])
+
+
 def choose_random_value(values_list):
     return values_list[randint(0, len(values_list) - 1)]
 
